@@ -4,10 +4,54 @@
   <title>사슴에 관하여</title>
 </head>
 <body>
+    <input type = "text" id="firstColor">
+    <input type = "text" id="secondColor">
+    <input type = "text" id="thirdColor">
+    <input  type = "button" value = "change!"
+        onclick = "backgroundColorChageToColorTextInput()">
+    <!-- <input type = "button" onclick = "showMessage()" value="Message출력">
+    <input type = "button" onclick = "redColor()" value="빨간색">
+    <input type = "button" onclick = "yellowColor()" value="노란색">
+    <input type = "button" onclick = "orangeColor()" value="주황색">
+    <input type = "button" onclick = "whiteColor()" value ="흰색"> -->
     <script>
-        for (const elem of document.body.children) {
-            alert(elem.text);
+        function backgroundColorChageToColorTextInput() {
+            let typedColorFirst = document.getElementById("firstColor");
+            let typedColorSecond = document.getElementById("secondColor");
+            let typedColorThird = document.getElementById("thirdColor");
+            alert(typedColorFirst.value);
+            alert(typedColorSecond.value);
+            alert(typedColorThird.value);
+            setTimeout(() => document.body.style.background = typedColorFirst.value, 1000);
+		    setTimeout(() => document.body.style.background = typedColorSecond.value, 2000);
+            setTimeout(() => document.body.style.background = typedColorThird.value, 3000);
+            setTimeout(() => document.body.style.background = "", 4000);
+            // if(typedColor.value==="red"){
+            //     document.body.style.background = typedColor.value;
+            // } else if (typedColor.value==="blue"){
+            //     document.body.style.background = typedColor.value;
+            // } else if (typedColor.value==="yellow"){
+            //     document.body.style.background = typedColor.value;
+            // } else { 
+            //     alert("지원하지않는색입니다. red,yellow,blue만이용해주세요")
+            // }
+            
         }
+        // function showMessage() {
+        //     alert("Message");
+        // }
+        // function redcolor() {
+        //     document.body.style.background = "red";
+        // }
+        // function yellowcolor() {
+        //     document.body.style.background = "yellow";
+        // }
+        // function orangecolor() {
+        //     document.body.style.background = "orange";
+        // }
+        // function whitecolor() {
+        //     document.body.style.background = "";
+        // }
     </script>
     <a>
         사슴은 아름다운 동물입니다.
