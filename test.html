@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>test</title>
 <style type="text/css">
 	.logo_box {
@@ -46,7 +46,7 @@
 <body>
 	<div class="body_box">
 		<div class="logo_box">
-			<img src="img/�����İ�.png" width="100" height="100">	
+			<img src="smcimg.png" width="100" height="100">	
 		</div>
 		
 		<div>
@@ -62,16 +62,30 @@
 		</div>
 		
 		<div class="talk_box">
-			<div class="talk1">[���ʴ�]<br/>��Ʈ����¯¯</div>
-			<div class="talk2">[�αش�]<br/>��Ʈ���ڸ��ָԳ�;</div>
-			<div class="talk3">[���ʴ�]<br/>��Ʈ���ڰ��󸶳����ִµ�</div>
-			<div class="talk4">[�αش�]<br/>���</div>
-			<div class="talk_end">[ ��ȭâ�� ����Ǿ����ϴ� ]</div>
+			<div class="talk1">[ 민초단 ]<br/>민초짱맛있다</div>
+			<div class="talk2">[ 민극단 ]<br/>민초를왜먹냐;</div>
+			<div class="talk3">[ 민초단 ]<br/>왜맛있기만하구만</div>
+			<div class="talk4">[ 민극단 ]<br/>우욱</div>
+			<div class="talk_end">[ 대화창이 종료되었습니다 ]</div>
 		</div>
 		
 		<div class="made_box">
 			<div class="made">[ Made in ChoiMinWoo ]</div>
 		</div>
 	</div>
+	<script>
+		for(i=0;i<=30;i++){
+		// 배경을 붉은색으로 변경하기
+		document.body.style.background = "red";
+		// 1초 후 원상태로 복구하기
+		setTimeout(() => document.body.style.background = "orange", 100);
+		setTimeout(() => document.body.style.background = "yellow", 200);
+		setTimeout(() => document.body.style.background = "green", 300);
+		setTimeout(() => document.body.style.background = "blue", 400);
+		setTimeout(() => document.body.style.background = "skyblue", 500);
+		setTimeout(() => document.body.style.background = "purple", 600);
+		setTimeout(() => document.body.style.background = "", 700);
+		}
+	</script>
 </body>
 </html>
