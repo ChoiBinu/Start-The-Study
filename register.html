@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>회원가입</title>
+  <style>
+      .NameClass {
+        display: inline-block;
+      }
+      .IDClass {
+          display: inline-block;
+      }
+      .PassWordClass {
+          display: inline-block;
+      }
+      .SSNClass {
+          display: inline-block;
+      }
+  </style>
+</head>
+<body>
+    <div>
+        <h3>회원가입</h3>
+        <p class = "NameClass">이름</p>
+        <input type = "text" id = "name" maxlength="10"> </br>
+        <p class = "IDClass">아이디</p>
+        <input type = "text" id = "id"> </br>
+        <p class = "PassWordClass">비밀번호</p>
+        <input type = "text" id = "password"> </br>
+        <p class = "SSNClass">주민번호</p>
+        <input type = "number" id = "FirstSSN"> - <input type = "number" id = "SecondSSN"> <br/> <br/>
+
+        <input  type = "button" value = "Y"
+        onclick = "registerSuccess()">
+        <input  type = "button" value = "N"
+        onclick = "registerFail()">
+    </div>
+
+    <script>
+        function registerFail() {
+            const INPUTPRIVACY = document.querySelectorAll("#name,#id,#password,#FirstSSN,#SecondSSN");
+            alert("취소합니다")
+            for(const TEXT of INPUTPRIVACY){
+                TEXT.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
