@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>회원가입</title>
+  <style>
+      .NameClass {
+        display: inline-block;
+      }
+      .IDClass {
+          display: inline-block;
+      }
+      .PassWordClass {
+          display: inline-block;
+      }
+      .SSNClass {
+          display: inline-block;
+      }
+  </style>
+</head>
+<body>
+    <div>
+        <h3>회원가입</h3>
+        <p class = "NameClass">이름</p>
+        <input type = "text" id = "name"> </br>
+        <p class = "IDClass">아이디</p>
+        <input type = "text" id = "id"> </br>
+        <p class = "PassWordClass">비밀번호</p>
+        <input type = "text" id = "password"> </br>
+        <p class = "SSNClass">주민번호</p>
+        <input type = "text" id = "FirstSSN"> - <input type = "text" id = "SecondSSN"> <br/> <br/>
+
+        <input  type = "button" value = "Y"
+        onclick = "registerSuccess()">
+        <input  type = "button" value = "N"
+        onclick = "registerFail()">
+    </div>
+
+    <script>
+        function registerSuccess() {
+            const INPUTNAME = document.getElementById("name").value;
+            const INPUTPASSWORD = document.getElementById("password").value;
+            const INPUTFIRSTSSN = document.getElementById("FirstSSN").value;
+            const INPUTSECONDSSN = document.getElementById("SecondSSN").value;
+
+            if (INPUTNAME.length < 2 || INPUTNAME.length > 10) {
+                alert("이름은 최소2글자 최대 10글자로 입력하여야합니다.");
+                for (const element of document.querySelectorAll("input[type='text']")) {
+                     element.value = "";
+                }
+            } else if ((INPUTPASSWORD.includes('?')===false && INPUTPASSWORD.includes('!')===false && INPUTPASSWORD.includes('_')===false && INPUTPASSWORD.includes('@')===false) 
+                        || INPUTPASSWORD.length < 8) {
+                alert("비밀번호에는 '?','!','@','_'가 들어가야하며 8글자 이상이어야 합니다.");
+                for (const element of document.querySelectorAll("input[type='text']")) {
+                     element.value = "";
+                }
+            } else if ((INPUTFIRSTSSN.length !== 6 || INPUTSECONDSSN.length !== 1) || (isNaN(INPUTFIRSTSSN) || isNaN(INPUTSECONDSSN))) {
+                alert("주민등록번호는 첫번쨰는 6글자 두번째는 1글자와 숫자로만 입력하셔야합니다.");
+                for (const element of document.querySelectorAll("input[type='text']")) {
+                     element.value = "";
+                }
+            } else {
+                alert("회원가입이 완료되었습니다");
+                for (const element of document.querySelectorAll("input[type='text']")) {
+                     element.value = "";
+                }
+            }
+        }
+
+        function registerFail() {
+            alert("취소합니다")
+            for (const element of document.querySelectorAll("input[type='text']")) {
+                     element.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
